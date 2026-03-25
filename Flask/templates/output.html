@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yoga Pose Detection - Live Video</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #2f4356;
+            color: black;
+            text-align: center;
+        }
+
+        .navbar{
+            background:black;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:18px 60px;
+        }
+
+        .logo{
+            font-size:28px;
+            font-weight:bold;
+            letter-spacing:2px;
+            color:white;
+        }
+
+        .nav-links{
+            list-style:none;
+            display:flex;
+            gap:35px;
+        }
+
+        .nav-links a{
+            text-decoration:none;
+            color:white;
+            font-weight:bold;
+            font-size:16px;
+            transition:0.3s;
+        }
+
+        .nav-links a:hover{
+            color:#00ffcc;
+        }
+
+        .container {
+            margin-top: 100px;
+            background: rgb(225, 239, 30);
+            padding: 40px;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 15px;
+        }
+
+        .divider{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            margin-bottom:20px;
+        }
+
+        .line{
+            width:120px;
+            height:3px;
+            background:black;
+            margin:0 15px;
+        }
+
+        .star{
+            font-size:28px;
+        }
+
+        button {
+            padding: 12px 30px;
+            background: #1fcc00;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #00ccaa;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar"> 
+    <div class="logo">YOGA POSE</div>
+
+    <div class="nav-links">
+        <a href="/">HOME</a> 
+        <a href="/iinput">IMAGE</a>
+    </div>
+
+</nav>
+
+<div class="container">
+    <h2>Live Yoga Pose Detection</h2>
+
+    <div class="divider">
+    <div class="line"></div>
+    <div class="star">★</div>
+    <div class="line"></div>
+    </div>
+
+    <p>Press the button below to start webcam prediction.</p>
+
+    <form action="/voutput" method="POST">
+        <button type="submit">Start Video Detection</button>
+    </form>
+
+    <br><br>
+    <p>Press <b>Q</b> to stop the video window.</p>
+    <a href="/">⬅ Back to Home</a>
+</div>
+
+</body>
+</html>

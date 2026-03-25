@@ -1,0 +1,317 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#2bb39a;
+  color:white;
+}
+
+
+/* NAVBAR */
+
+.navbar{
+  background:black;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 60px;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:35px;
+}
+
+.nav-links li{
+  display:inline;
+  cursor:pointer;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:white;
+  font-weight:bold;
+  font-size:16px;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#1abc9c;
+}
+
+.nav-links a.active {
+  background-color: #2bb39a;
+}
+
+
+/* SECTION */
+
+section {
+    display: none;
+    padding: 40px;
+    text-align: center;
+}
+
+.active{
+display:block;
+}
+
+/* IMAGE BOX */
+
+.image-box {
+  background: none;
+  padding: 0;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: inline-block;
+}
+
+.image-box img {
+  background: white;
+  border-radius: 25px;
+  display: block;
+  width: 220px;
+  height: 160px;
+  object-fit: contain;
+}
+
+/* TITLE */
+
+.title{
+  font-size:70px;
+  font-weight:bold;
+  letter-spacing:5px;
+  margin-bottom:20px;
+}
+
+/* STAR DIVIDER */
+
+.divider{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:20px;
+}
+
+.line{
+  width:120px;
+  height:3px;
+  background:white;
+  margin:0 15px;
+}
+
+.star{
+  font-size:28px;
+}
+
+/* SUBTITLE */
+
+.subtitle{
+  font-size:22px;
+  opacity:0.9;
+}
+
+
+/* ABOUT SECTION */
+
+.about{
+text-align:center;
+padding:40px 100px;
+}
+
+.about h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
+/* TEXT */
+
+.about-container{
+display:flex;
+justify-content:center;
+gap:60px;
+margin-bottom:40px;
+}
+
+.about-text{
+width:40%;
+text-align:left;
+line-height:1.8;
+font-size:16px;
+}
+
+/* BUTTONS */
+
+.buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+}
+
+.btn{
+padding:12px 30px;
+background:transparent;
+border:2px solid white;
+color:white;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#edeb75;
+border-color:black;
+color:black;
+}
+
+
+/* MODELS CONTAINER */
+
+.models {
+  margin-top: 150px;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 80px;
+  flex-wrap: wrap;
+}
+
+.models h2 {
+  background: white;
+  color: #2c3e50;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  font-size: 28px;
+  font-weight: bold;
+  min-width: 140px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.models h2:hover {
+  transform: scale(1.05);
+}
+
+/* MODAL STYLING */
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+}
+
+.modal-content{
+background:rgb(225, 239, 30);
+width:70%;
+margin:60px auto;
+padding:40px;
+text-align:center;
+position:relative;
+color:black;
+}
+
+.close{
+position:absolute;
+right:20px;
+top:10px;
+font-size:32px;
+cursor:pointer;
+}
+
+.modal .line{
+  background:black;
+}
+
+.modal p{
+margin-top:20px;
+color:#444;
+}
+
+.buttons{
+margin-top:20px;
+}
+
+.link{
+color:#2cc6a3;
+margin-top:10px;
+margin-right:20px;
+}
+
+.close-btn{
+background:#2cc6a3;
+border:none;
+padding:10px 20px;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+
+.close-btn:hover{
+  background:#2cc6a3;
+  color:black;
+}
+
+
+/* CONTACT SECTION */
+
+.contact{
+    text-align:center;
+    padding-top:60px;
+}
+
+.contact h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+/* FORM */
+
+form{
+    width:600px;
+    margin:40px auto;
+}
+
+input, textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:none;
+    background:#d9d9d9;
+    font-size:14px;
+}
+
+textarea{
+    height:120px;
+    resize:vertical;
+}
+
+button{
+  background:rgb(245, 233, 8);
+  color:black;
+  border:2px solid black;
+  padding:10px 20px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  background:#edeb75;
+  border-color:black;
+}

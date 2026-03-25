@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yoga Pose Prediction - Image</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #2f4356;
+            color: black;
+            text-align: center;
+        }
+
+        .navbar{
+            background:black;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:18px 60px;
+        }
+
+        .logo{
+            font-size:28px;
+            font-weight:bold;
+            letter-spacing:2px;
+            color:white;
+        }
+
+        .nav-links{
+            list-style:none;
+            display:flex;
+            gap:35px;
+        }
+
+        .nav-links a{
+            text-decoration:none;
+            color:white;
+            font-weight:bold;
+            font-size:16px;
+            transition:0.3s;
+        }
+
+        .nav-links a:hover{
+            color:#00ffcc;
+        }
+
+        .container {
+            margin-top: 100px;
+            background: rgb(225, 239, 30);
+            padding: 40px;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 15px;
+        }
+
+        .divider{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            margin-bottom:20px;
+        }
+
+        .line{
+            width:120px;
+            height:3px;
+            background:black;
+            margin:0 15px;
+        }
+
+        .star{
+            font-size:28px;
+        }
+
+        input[type="file"] {
+            margin: 20px;
+        }
+
+        button {
+            padding: 10px 25px;
+            background: #1fcc00;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #00ccaa;
+        }
+
+        .prediction {
+            margin-top: 30px;
+            font-size: 22px;
+            color: #5900ff;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar"> 
+    <div class="logo">YOGA POSE</div>
+
+    <div class="nav-links">
+        <a href="/">HOME</a> 
+        <a href="/vinput">VIDEO</a>
+    </div>
+
+</nav>
+
+<div class="container">
+    <h2>Upload Yoga Image</h2>
+
+    <div class="divider">
+    <div class="line"></div>
+    <div class="star">★</div>
+    <div class="line"></div>
+    </div>
+
+    <form action="/ioutput" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required><br>
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if prediction %}
+    <div class="prediction">
+        Predicted Yoga Pose is : <b>{{ prediction }}</b>
+    </div>
+
+    <br>
+
+    <img src="{{ url_for('static', filename=img_path) }}" width="300" style="border-radius:10px;">
+    {% endif %}
+
+    <br><br>
+    <a href="/">⬅ Back to Home</a>
+</div>
+
+</body>
+</html>

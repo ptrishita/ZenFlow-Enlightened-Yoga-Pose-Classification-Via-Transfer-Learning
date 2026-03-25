@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenFlow - Yoga Pose Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <nav class="navbar">
+        <div class="logo">YOGA POSE</div>
+
+        <ul class="nav-links">
+            <li><a onclick="showSection('home')">HOME</a></li>
+            <li><a onclick="showSection('about')">ABOUT</a></li>
+            <li><a onclick="showSection('models')">MODELS</a></li>
+            <li><a onclick="showSection('contact')">CONTACT</a></li>
+            <li><a href="/iinput">IMAGE</a></li>
+            <li><a href="/vinput">VIDEO</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<!-- HOME SECTION -->
+<section id="home" class="active">
+    <div class="image-box">
+    <img src="{{ url_for('static', filename='assets/yoga.jpg') }}" alt="Yoga Pose">
+    </div>
+
+    <h1 class="title">YOGA</h1>
+
+    <div class="divider">
+    <div class="line"></div>
+    <div class="star">★</div>
+    <div class="line"></div>
+    </div>
+
+    <p class="subtitle">Exercise - Therapy - Spiritual</p>
+</section>
+
+
+<!-- ABOUT SECTION -->
+<section id="about">
+    <h1>ABOUT</h1>
+
+    <div class="divider">
+        <span class="line"></span>
+        <span class="star">★</span>
+        <span class="line"></span>
+    </div>
+
+    <div class="about-container">
+
+        <div class="about-text">
+            <p>
+                Yoga is a 5000-year-old practice developed in ancient India by the
+                Indus-Sarasvati civilization. The word yoga means deep association
+                and union of mind with the body. It is used to keep both mind and
+                body in equilibration in all flip-flops of life by means of asana,
+                meditation, and several other techniques. Nowadays, yoga has gained
+                worldwide attention due to increased stress levels in the modern
+                lifestyle, and there are numerous methods or resources for learning yoga.
+            </p>
+        </div>
+
+        <div class="about-text">
+            <p>
+                Yoga can be practiced in yoga centers, through personal tutors,
+                and can also be learned on one's own with the help of the Internet,
+                books, recorded clips, etc. In fast-paced lifestyles, many people
+                prefer self-learning because the abovementioned resources might not
+                be available all the time. But in self-learning, one may not find an
+                incorrect pose. Incorrect posture can be harmful to one’s health,
+                resulting in acute pain and long-term chronic concerns.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="buttons">
+        <button class="btn" onclick="window.location.href='/iinput'">Image</button>
+        <button class="btn" onclick="window.location.href='/vinput'">Video</button>
+    </div>
+
+</section>
+
+
+<!-- MODELS SECTION -->
+<section id="models">
+    <h1>MODELS</h1>
+
+    <div class="divider">
+    <div class="line"></div>
+    <div class="star">★</div>
+    <div class="line"></div>
+    </div>
+
+    <section class="models">
+        <h2 onclick="openModal('inc')">Inception V3</h2>
+        <h2 onclick="openModal('xcep')">Xception</h2>
+        <h2 onclick="openModal('res')">ResNet 50</h2>
+        <h2 onclick="openModal('vgg')">VGG 19</h2>
+    </section>
+
+    <!-- Modal HTML -->
+    <div id="inc" class="modal">
+    <div class="modal-content">
+    <span class="close" onclick="closeModal('inc')">×</span>
+    <h1>INCEPTION V3</h1>
+    <div class="divider">
+    <div class="line"></div>
+    <div class="star">★</div>
+    <div class="line"></div>
+    </div>
+    <p>
+    InceptionV3 is a convolutional neural network that is 48 layers deep.
+    The pretrained network can classify images into 1000 object categories.
+    </p>
+    <div class="buttons">
+    <a class="link" href="https://keras.io/api/applications/inceptionv3/" target="_blank">Link</a>
+    <button class="close-btn" onclick="closeModal('inc')">Close Window</button>
+    </div>
+    </div>
+    </div>
+
+    <div id="xcep" class="modal">
+    <div class="modal-content">
+    <span class="close" onclick="closeModal('xcep')">×</span>
+    <h1>XCEPTION</h1>
+    <div class="divider">
+    <div class="line"></div>
+    <div class="star">★</div>
+    <div class="line"></div>
+    </div>
+    <p>
+    Xception is a deep convolutional neural network architecture that extends the
+    Inception family. It replaces standard Inception modules with depthwise
+    separable convolutions, making the network more efficient and powerful for
+    image classification tasks.
+    </p>
+    <div class="buttons">
+    <a class="link" href="https://keras.io/api/applications/xception/" target="_blank">Link</a>
+    <button class="close-btn" onclick="closeModal('xcep')">Close Window</button>
+    </div>
+    </div>
+    </div>
+
+    <div id="res" class="modal">
+    <div class="modal-content">
+    <span class="close" onclick="closeModal('res')">×</span>
+    <h1>RESNET 50</h1>
+    <div class="divider">
+    <div class="line"></div>
+    <div class="star">★</div>
+    <div class="line"></div>
+    </div>
+    <p>
+    ResNet50 is a 50-layer deep convolutional neural network introduced as part of the
+    Residual Network (ResNet) architecture. It uses skip connections or residual
+    connections to allow gradients to flow through the network more easily,
+    enabling the training of very deep networks for image recognition tasks.
+    </p>
+    <div class="buttons">
+    <a class="link" href="https://keras.io/api/applications/resnet/" target="_blank">Link</a>
+    <button class="close-btn" onclick="closeModal('res')">Close Window</button>
+    </div>
+    </div>
+    </div>
+
+    <div id="vgg" class="modal">
+    <div class="modal-content">
+    <span class="close" onclick="closeModal('vgg')">×</span>
+    <h1>VGG 19</h1>
+    <div class="divider">
+    <div class="line"></div>
+    <div class="star">★</div>
+    <div class="line"></div>
+    </div>
+    <p>
+    VGG19 is a deep convolutional neural network architecture with 19 layers.
+    It was developed by the Visual Geometry Group (VGG) at the University of Oxford.
+    The model uses very small 3×3 convolution filters and is widely used for
+    image classification, feature extraction, and transfer learning tasks.
+    </p>
+    <div class="buttons">
+    <a class="link" href="https://keras.io/api/applications/vgg/" target="_blank">Link</a>
+    <button class="close-btn" onclick="closeModal('vgg')">Close Window</button>
+    </div>
+    </div>
+    </div>
+
+</section>
+
+
+<!-- CONTACT SECTION -->
+<section id="contact">
+    <h1>CONTACT ME</h1>
+
+    <div class="divider">
+    <div class="line"></div>
+    <div class="star">★</div>
+    <div class="line"></div>
+    </div>
+
+    <form>
+        <input type="text" placeholder="Full Name"><br>
+        <input type="email" placeholder="Email Address"><br>
+        <input type="text" placeholder="Phone Number"><br>
+        <textarea placeholder="Message"></textarea><br>
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
